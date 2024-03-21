@@ -3,9 +3,12 @@ version: "3.9"
 services:
   app:
     build:
+      #use current directory
       context: .
+      #map port 8000 on our local machine to port 8000 on the docker container
     ports:
       - "8000:8000"
+      #mapping app directory on local machine to /app on the docker container
     volumes:
       - ./app:/app
     command: >
